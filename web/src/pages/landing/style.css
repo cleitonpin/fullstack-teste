@@ -189,3 +189,7 @@ body {
 .filterByArea span:hover:last-child, .filterActive:last-child{
     border-bottom-left-radius: 8px;
 }
+
+.grid p {
+    font-size: 15px;
+}

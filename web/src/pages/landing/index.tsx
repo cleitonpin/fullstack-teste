@@ -123,11 +123,21 @@ const Landing = () => {
             </div>
             <div className="grid">
                 { loading
-                    ? (<Skeleton width={376} height={258} variant="rect" animation="wave" />)
-                    : data.length > 0 ? selectedFilters.length === 0
-                        ? data.map(produto => <Card produto={produto}/>)
-                        : data.filter((item: IProduto) => selectedFilters.includes(item.type))
-                                .map(produto => <Card produto={produto}/>) : 
+                    ? (
+                        <div>
+                            <Skeleton width={376} height={158} variant="rect" animation="wave" />
+                            <div>
+                                <Skeleton width={171} height={21} /> 
+                                <Skeleton width={48} height={14} /> 
+                            </div>
+                            <Skeleton width={73} height={21} /> 
+                        </div>
+                    )
+                    : data.length > 0 ? selectedFilters.length === 0 ? 
+                        data.map(produto => <Card produto={produto}/>) : 
+                            data
+                            .filter((item: IProduto) => selectedFilters.includes(item.type))
+                            .map(produto => <Card produto={produto}/>) : 
                         (<p>Nenhum resultado encontrado.</p>)
                 }
             </div>
