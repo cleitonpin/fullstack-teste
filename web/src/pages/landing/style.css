@@ -118,10 +118,6 @@ body {
     gap: 20px;
 }
 
-.grid p {
-    
-}
-
 .buttons {
     display: flex;
     align-items: flex-end;
